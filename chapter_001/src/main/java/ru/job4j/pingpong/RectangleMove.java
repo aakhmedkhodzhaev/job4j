@@ -15,7 +15,7 @@ public class RectangleMove implements Runnable {
 
             for (int i = 0; i < x; i++) {
                 this.rect.setX(i);
-            //  this.rect.setY(i); // если нужно с y
+                //  this.rect.setY(i); // если нужно с y
 
                 try {
                     Thread.sleep(38);
@@ -25,13 +25,14 @@ public class RectangleMove implements Runnable {
             }
             for (int i = x; i > 0; i--) {
                 this.rect.setX(i);
-            //  this.rect.setY(i); // если нужно с y
+                //  this.rect.setY(i); // если нужно с y
                 try {
                     Thread.sleep(38);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
+
         }
     }
 }
