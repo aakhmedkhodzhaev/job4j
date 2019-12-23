@@ -14,7 +14,7 @@ public class RectangleMove implements Runnable {
 
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted()) {
+        while (true) {
             // выбор направления перемещения
             this.rect.setX(this.rect.getX() + this.i);
             // ограничения значения направления по площади
