@@ -50,7 +50,7 @@ public class FileDownload implements Runnable{
     }
 
     public static void main(String [] args){
-        FileDownload download = new FileDownload(100);
+        FileDownload download = new FileDownload(200);
         download.run();
     }
 }
