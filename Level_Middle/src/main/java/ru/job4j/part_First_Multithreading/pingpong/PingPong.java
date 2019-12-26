@@ -22,7 +22,6 @@ public class PingPong extends Application {
         stage.setTitle(JOB4J);
         stage.setResizable(false);
         stage.show();
-        stage.setOnCloseRequest(event -> thread.interrupt()); // синглан на остановку той нити { System.exit(0); }// Остановка программы при Выходе System.exit(0);
-
+        stage.setOnCloseRequest(event -> thread.interrupt()); // синглан на остановку той нити { System.exit(0);}// Остановка программы при Выходе System.exit(0);
     }
 }

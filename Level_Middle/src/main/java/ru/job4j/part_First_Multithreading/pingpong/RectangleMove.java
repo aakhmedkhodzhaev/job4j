@@ -33,7 +33,7 @@ public class RectangleMove implements Runnable {
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+                Thread.currentThread().interrupt(); // прерывание текущей нити
                 System.out.println("Завершение работы программы пинг-понг");
             }
         }
