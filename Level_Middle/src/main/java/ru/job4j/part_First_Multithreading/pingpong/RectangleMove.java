@@ -1,4 +1,4 @@
-package ru.job4j.pingpong;
+package ru.job4j.part_First_Multithreading.pingpong;
 
 import javafx.scene.shape.Rectangle;
 
@@ -15,7 +15,7 @@ public class RectangleMove implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             // выбор направления перемещения
             this.rect.setX(this.rect.getX() + this.i);
             if(this.rect.getX()>300||this.rect.getX()<0)
@@ -33,7 +33,8 @@ public class RectangleMove implements Runnable {
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
+                System.out.println("Завершение работы программы пинг-понг");
             }
         }
     }
