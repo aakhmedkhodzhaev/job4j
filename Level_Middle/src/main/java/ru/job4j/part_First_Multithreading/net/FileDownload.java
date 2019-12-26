@@ -2,33 +2,55 @@ package ru.job4j.part_First_Multithreading.net;
 
 import java.io.*;
 import java.net.URL;
-import java.time.LocalDateTime;
 
 
-public class FileDownload {
-    private final static int onesecond = 2000;
+public class FileDownload implements Runnable{
 
-    public static void main(String[] args) throws Exception {
-        String file = "https://pdfs.semanticscholar.org/3650/4bc31d3b2c5c00e5bfee28ffc5d403cc8edd.pdf";
-        try (BufferedInputStream in = new BufferedInputStream(new URL(file).openStream());
+    private long v; // скорость скачивания
+
+    public FileDownload(long v){
+        this.v=v;
+    }
+
+    @Override
+    public void run(){
+        String url = "https://pdfs.semanticscholar.org/3650/4bc31d3b2c5c00e5bfee28ffc5d403cc8edd.pdf";
+        File file = new File("pom_tmp.pdf");
+        try (BufferedInputStream in = new BufferedInputStream(new URL(url).openStream()); // InputStream in = new URL(link).openConnection().getInputStream(); Можно ли так!?
              FileOutputStream fileOutputStream = new FileOutputStream("pom_tmp.pdf")) {
-            LocalDateTime dStart = LocalDateTime.now();
-            LocalDateTime dEnd = LocalDateTime.now();
-            byte dataBuffer[] = new byte[1024];
+            byte dataBuffer [] = new byte[1024];
             int bytesRead;
-            while ((bytesRead = in.read(dataBuffer, 0, 1024)) != -1) {
+            long startDate = System.nanoTime();
+            int count = 0;
+            long downloaded = 0;
+            while ((bytesRead = in.read(dataBuffer)) != -1) {
                 fileOutputStream.write(dataBuffer, 0, bytesRead);
-                int weigth = bytesRead/onesecond-(dEnd.getNano()-dStart.getNano());
-                if(weigth > 200){
-                    Thread.sleep(weigth);
-                }
-                else{
-                    Thread.sleep(0);
+                System.out.println(String.format("%,.2fkb", (double) file.length()/1024));
+                long spentDate = System.nanoTime() - startDate;
+                double differ =(double) spentDate/1000000000.0;
+                System.out.println(String.format("%s секунд", differ));
+                if(differ>=1){
+                    downloaded =(file.length()-downloaded)/1024;
+                    if(downloaded>=v){
+                        long endDate = downloaded - v;
+                        long timeout = (endDate/v)*1000;
+                        System.out.println(String.format("Время ожидания %s сек.", timeout/1000));
+                        Thread.sleep(timeout);
+                        count += timeout/1000;
+                        startDate = System.nanoTime();
+                    }
                 }
             }
-        } catch (ClassCastException e) {
+            System.out.println("Файл скачен. Время ожидания составило:"+count+" секунд");
+        } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Errors"+" "+ e);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+    }
+
+    public static void main(String [] args){
+        FileDownload download = new FileDownload(100);
+        download.run();
     }
 }
