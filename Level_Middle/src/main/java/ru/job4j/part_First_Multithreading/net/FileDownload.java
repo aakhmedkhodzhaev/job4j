@@ -18,7 +18,7 @@ public class FileDownload implements Runnable{
     @Override
     public void run(){
         File file = new File("pom_tmp."+url.substring(url.lastIndexOf(".")+1, url.length())); // url.substring(url.length()-3, url.length())
-        try (BufferedInputStream in = new BufferedInputStream(new URL(url).openStream()); // InputStream in = new URL(link).openConnection().getInputStream(); Можно ли так!?
+        try (BufferedInputStream in = new BufferedInputStream(new URL(url).openStream()); // InputStream in = new URL(url).openConnection().getInputStream(); Можно ли так!?
              FileOutputStream fileOutputStream = new FileOutputStream("pom_tmp.pdf")) {
             byte dataBuffer [] = new byte[1024];
             int bytesRead;
