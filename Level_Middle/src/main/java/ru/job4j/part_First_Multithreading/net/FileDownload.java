@@ -7,15 +7,17 @@ import java.net.URL;
 public class FileDownload implements Runnable{
 
     private long v; // скорость скачивания
+    private String url; // адрес, ссылка на скачиваемый объект
 
-    public FileDownload(long v){
+    public FileDownload(String url , long v){
+        this.url=url;
         this.v=v;
+
     }
 
     @Override
     public void run(){
-        String url = "https://pdfs.semanticscholar.org/3650/4bc31d3b2c5c00e5bfee28ffc5d403cc8edd.pdf";
-        File file = new File("pom_tmp.pdf");
+        File file = new File("pom_tmp."+url.substring(url.lastIndexOf(".")+1, url.length())); // url.substring(url.length()-3, url.length())
         try (BufferedInputStream in = new BufferedInputStream(new URL(url).openStream()); // InputStream in = new URL(link).openConnection().getInputStream(); Можно ли так!?
              FileOutputStream fileOutputStream = new FileOutputStream("pom_tmp.pdf")) {
             byte dataBuffer [] = new byte[1024];
@@ -50,7 +52,7 @@ public class FileDownload implements Runnable{
     }
 
     public static void main(String [] args){
-        FileDownload download = new FileDownload(200);
+        FileDownload download = new FileDownload("https://pdfs.semanticscholar.org/3650/4bc31d3b2c5c00e5bfee28ffc5d403cc8edd.pdf", 200);
         download.run();
     }
 }
