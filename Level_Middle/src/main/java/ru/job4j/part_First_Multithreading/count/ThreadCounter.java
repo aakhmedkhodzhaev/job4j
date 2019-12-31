@@ -12,7 +12,7 @@ public class ThreadCounter extends Thread{
         this.value++;
     }
 
-    public int get() { // public synchronized int get() // для упорядочивания нужно synchronized
+    public synchronized int get() { // для упорядочивания нужно synchronized
         return this.value;
     }
 

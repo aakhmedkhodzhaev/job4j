@@ -1,15 +1,16 @@
 package ru.job4j.part_First_Multithreading.count;
 
 import org.junit.Test;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-public class CountTest {
+public class ThreadCounterTest {
 
     private class ThreadCount extends Thread {
-        private final Count count;
+        private final ThreadCounter count;
 
-        private ThreadCount(final Count count) {
+        private ThreadCount(final ThreadCounter count) {
             this.count = count;
         }
 
@@ -22,7 +23,7 @@ public class CountTest {
     @Test
     public void whenExecute2ThreadThen2() throws InterruptedException {
         //Создаем счетчик.
-        final Count count = new Count();
+        final ThreadCounter count = new ThreadCounter();
         //Создаем нити.
         Thread first = new ThreadCount(count);
         Thread second = new ThreadCount(count);
