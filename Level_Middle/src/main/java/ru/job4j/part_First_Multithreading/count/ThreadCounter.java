@@ -4,7 +4,7 @@ import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
 @ThreadSafe
-public class ThreadCounter{
+public class ThreadCounter extends Thread{
     @GuardedBy("this")
     private int value;
 
@@ -12,7 +12,13 @@ public class ThreadCounter{
         this.value++;
     }
 
-    public int get() { // public synchronized int get() // для упорядочания нужно воспользоваться synchronized
+    public int get() { // public synchronized int get() // для упорядочивания нужно воспользоваться synchronized
         return this.value;
+    }
+
+    public void run(){
+        for(int i=0; i<1000; i++){
+        get();
+        }
     }
 }
