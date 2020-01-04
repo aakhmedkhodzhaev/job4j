@@ -1,24 +1,42 @@
 package ru.job4j.part_First_Multithreading.count;
 
-import net.jcip.annotations.GuardedBy;
-import net.jcip.annotations.ThreadSafe;
+public class ThreadCounter {
 
-@ThreadSafe
-public class ThreadCounter extends Thread{
-    @GuardedBy("this")
-    private int value;
+    public static class CounterThread extends Thread{
 
-    public synchronized void increment() {
-        this.value++;
-    }
+        private final Count counter;
 
-    public synchronized int get() { // для упорядочивания нужно synchronized
-        return this.value;
-    }
-
-    public void run(){
-        for(int i=0; i<1000; i++){
-        get();
+        public CounterThread(final Count counter){
+            this.counter = counter;
         }
+
+        public void run() {
+            while (counter.get()<2000){
+            for(int i=0;i<10;i++) {
+                counter.increment();
+//            System.out.println(counter.get());
+              }
+              try {
+                  Thread.sleep(1);
+              } catch (InterruptedException ex) {
+                  Thread.currentThread().interrupt();
+              }
+            }
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException{
+
+        Count counter = new Count();
+        Thread threadA = new CounterThread(counter);
+        Thread threadB = new CounterThread(counter);
+
+        threadA.start();
+        threadB.start();
+        threadA.join();
+        threadB.join();
+
+        System.out.println(counter.get());
+
     }
 }

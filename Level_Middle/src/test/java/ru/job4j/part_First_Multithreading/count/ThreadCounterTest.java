@@ -8,25 +8,25 @@ import static org.junit.Assert.assertThat;
 public class ThreadCounterTest {
 
     private class ThreadCount extends Thread {
-        private final ThreadCounter count;
+        private final Count counter;
 
-        private ThreadCount(final ThreadCounter count) {
-            this.count = count;
+        private ThreadCount(final Count counter) {
+            this.counter = counter;
         }
 
         @Override
         public void run() {
-            this.count.increment();
+            this.counter.increment();
         }
     }
 
     @Test
     public void whenExecute2ThreadThen2() throws InterruptedException {
         //Создаем счетчик.
-        final ThreadCounter count = new ThreadCounter();
+        final Count counter = new Count();
         //Создаем нити.
-        Thread first = new ThreadCount(count);
-        Thread second = new ThreadCount(count);
+        Thread first = new ThreadCount(counter);
+        Thread second = new ThreadCount(counter);
         //Запускаем нити.
         first.start();
         second.start();
@@ -34,7 +34,7 @@ public class ThreadCounterTest {
         first.join();
         second.join();
         //Проверяем результат.
-        assertThat(count.get(), is(2));
+        assertThat(counter.get(), is(2));
 
     }
 }
