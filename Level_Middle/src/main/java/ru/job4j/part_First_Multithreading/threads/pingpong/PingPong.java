@@ -1,4 +1,4 @@
-package ru.job4j.part_First_Multithreading.pingpong;
+package ru.job4j.part_First_Multithreading.threads.pingpong;
 
 import javafx.application.Application;
 import javafx.scene.Group;

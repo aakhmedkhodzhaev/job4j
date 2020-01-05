@@ -1,4 +1,4 @@
-package ru.job4j.part_First_Multithreading.net;
+package ru.job4j.part_First_Multithreading.threads.net;
 
 import java.io.*;
 import java.net.URL;
