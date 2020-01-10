@@ -15,7 +15,6 @@ public class Counter {
                 if(i%2==0) {
                     sum += i;
                 }
-                i++;
               }
               return sum;
             }
