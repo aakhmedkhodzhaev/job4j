@@ -1,5 +1,13 @@
 package ru.job4j.converter;
 
+/**
+ * @task 3.4. Конвертер валюты.[#207052]
+ * @aim Демонстрация Работы конвертации валюты
+ * @version 1.0 10.12.2019
+ * @author Akhmedkhodzhaev A.A.
+ * @others так же есть тест
+ */
+
 public class Converter {
 
     public static int rubleToEuro(int value) {

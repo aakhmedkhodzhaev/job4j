@@ -1,5 +1,13 @@
 package ru.job4j.condition;
 
+/**
+ * @task 3.6. Расстояние между точками в системе координат[#207061]
+ * @aim Вычисление дистанции между точками в системе координат
+ * @version 1.0 10.12.2019
+ * @author Akhmedkhodzhaev A.A.
+ * @others так же есть тест
+ */
+
 public class Point {
 
     public static double distance(int x1, int y1, int x2, int y2) {

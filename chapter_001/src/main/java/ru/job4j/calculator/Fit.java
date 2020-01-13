@@ -1,5 +1,13 @@
 package ru.job4j.calculator;
 
+/**
+ * @task 3.5. Идеальный вес.[#207053]
+ * @aim Демонстрация Работы вычисления идеального веса
+ * @version 1.0 10.12.2019
+ * @author Akhmedkhodzhaev A.A.
+ * @others так же есть тест
+ */
+
 public class Fit {
 
     public static double manWeight(double height) {
