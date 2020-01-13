@@ -10,9 +10,16 @@ package ru.job4j.loop;
 
 public class CheckPrimeNumber {
     public static boolean check(int finish){
-        boolean prime=true;
-        for(int i = 2; i<finish; i++){
+        boolean prime=false;
+        int count=0;
+        for(int i = 2; i<=finish; i++){
             if((finish%i)==0){
+                count++;
+            }
+            if (count==1){
+                prime=true;
+            }
+            else {
                 prime=false;
             }
         }
