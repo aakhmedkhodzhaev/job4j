@@ -2,18 +2,18 @@ package ru.job4j.loop;
 
 /**
  * @task 5.9. Крест в псевдографике. [#207096]
- * @aim Демонстрация Работы вычисления идеального веса
- * @version 1.0 13.01.2020
+ * @aim Нарисовать крест на консоле
+ * @version 1.0 14.01.2020
  * @author Akhmedkhodzhaev A.A.
- * @others так же есть тест
+ * @others кретик нарисованный ноликом
  */
 
 public class Slash {
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
             for (int cell = 0; cell < size; cell++) {
-                boolean left = true; // добавить условие, по которому нужно определить ставить ли символ или нет.
-                boolean right = true; // добавить условие, что нужно ставить элемент в правый угол.
+                boolean left = (size+row+cell)%2==1; //  (size+row+cell)%2!=0 можно и так при условии что число(не размер) бывает отрицательным
+                boolean right = (size+cell+row)%2==1; // (size+row+cell)%2!=0 можно и так при условии что число(не размер) бывает отрицательным
                 if (left) {
                     System.out.print("0");
                 } else if (right) {
