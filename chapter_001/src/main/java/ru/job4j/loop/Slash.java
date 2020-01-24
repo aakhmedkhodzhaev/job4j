@@ -12,8 +12,8 @@ public class Slash {
     public static void draw(int size) {
         for (int row = 0; row < size; row++) {
             for (int cell = 0; cell < size; cell++) {
-                boolean left = (size+row+cell)%2==1; //  (size+row+cell)%2!=0 можно и так при условии что число(не размер) бывает отрицательным
-                boolean right = (size+cell+row)%2==1; // (size+row+cell)%2!=0 можно и так при условии что число(не размер) бывает отрицательным
+                boolean left = row==cell; //  (size+row+cell)%2!=0 можно и так при условии что число(не размер) бывает отрицательным
+                boolean right = size-1==cell+row; // (size+row+cell)%2!=0 можно и так при условии что число(не размер) бывает отрицательным
                 if (left) {
                     System.out.print("0");
                 } else if (right) {
