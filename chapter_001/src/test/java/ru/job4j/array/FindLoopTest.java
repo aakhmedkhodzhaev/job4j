@@ -17,7 +17,7 @@ public class FindLoopTest {
     }
 
     @Test
-    public void whenArrayHas2Then0() {
+    public void whenArrayHas5Then1() {
         FindLoop find = new FindLoop();
         int[] input = new int[] {6, 10, 3, 7, 9};
         int value = 5;
