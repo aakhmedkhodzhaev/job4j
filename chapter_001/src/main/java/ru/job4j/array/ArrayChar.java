@@ -10,7 +10,7 @@ package ru.job4j.array;
 
 public class ArrayChar {
     public static boolean startsWith(char[] word, char[] pref) {
-        boolean result = false;
+        boolean result = true;
         int sizeW=word.length;
         int sizeP=pref.length;
         int size = sizeW>sizeP? sizeP: sizeW;
@@ -19,11 +19,7 @@ public class ArrayChar {
                 result=false;
                 break;
             }
-            else{
-                result=true;
-            }
        }
         return result;
     }
-
 }
