@@ -10,15 +10,17 @@ package ru.job4j.array;
 
 public class ArrayChar {
     public static boolean startsWith(char[] word, char[] pref) {
-        boolean result = true;
-//      int sizeW=word.length;
+        boolean result = false;
         int sizeP=pref.length;
-//      int size = sizeW>sizeP? sizeP: sizeW;
         for(int i=0; i<sizeP; i++){
-            if(word[i]!=pref[i]){
+            if(word[i]==pref[i]){
+                result=true;
+            }
+            else{
                 result=false;
                 break;
             }
+
        }
         return result;
     }
