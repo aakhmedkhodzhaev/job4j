@@ -13,12 +13,12 @@ public class ArrayChar {
         boolean result = false;
         int sizeP=pref.length;
         for(int i=0; i<sizeP; i++){
-            if(word[i]==pref[i]){
-                result=true;
-            }
-            else{
+            if(word[i]!=pref[i]){
                 result=false;
                 break;
+            }
+            else{
+                result=true;
             }
 
        }
