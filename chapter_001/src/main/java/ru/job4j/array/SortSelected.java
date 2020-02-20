@@ -11,18 +11,15 @@ package ru.job4j.array;
 public class SortSelected {
 
     public static int[] sort(int[] data) {
-        int min = MinDiapason.findMin(data, 0, data.length-1);  // минимальное значение элемента в массиве
-        int index = FindLoopIndex.indexOf(data, min, 0, data.length); // индекс элемента полученного из массива
-        for (int i=0; i < data.length; i++) {
-            for(int j=i;j<data.length; j++){
-                if(data[j]<data[i]){
-                    int tmp = data[j];
-                    data[j]=data[i];
-                    data[i]=tmp;
-                }
+        for (int i = 0; i < data.length; i++) {
+            int min = MinDiapason.findMin(data, i, data.length - 1);
+            int index = FindLoopIndex.indexOf(data, min, 0, data.length);
+            if (data[index] < data[i]) {
+                int tmp = data[index];
+                data[index] = data[i];
+                data[i] = tmp;
             }
         }
-
         return data;
     }
 }
