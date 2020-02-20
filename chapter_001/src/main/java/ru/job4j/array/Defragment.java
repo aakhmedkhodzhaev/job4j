@@ -1,10 +1,10 @@
 package ru.job4j.array;
 
 /**
- * @task 6.8. Дефрагментация массива.[#207047]
- * @aim  Дефрагментация массива
- * @version 1.0 20.02.2020
  * @author Akhmedkhodzhaev A.A.
+ * @version 1.0 20.02.2020
+ * @task 6.8. Дефрагментация массива.[#207047]
+ * @aim Дефрагментация массива
  * @others Имеется Тест для проверки работы программы
  */
 
@@ -13,13 +13,13 @@ public class Defragment {
         for (int index = 0; index < array.length; index++) {
             if (array[index] == null) {
                 int point = index;
-                while(point< array.length){
-                    if(array[point]==null){
-                      point++;
-                      continue;
+                while (point < array.length) {
+                    if (array[point] == null) {
+                        point++;
+                        continue;
                     }
-                    if(array[point]!=null){
-                        String temp  = array[index];
+                    if (array[point] != null) {
+                        String temp = array[index];
                         array[index] = array[point];
                         array[point] = temp;
                         break;
