@@ -20,7 +20,7 @@ public class FileDownload implements Runnable {
         File file = new File("pom_tmp." + url.substring(url.lastIndexOf(".") + 1, url.length())); // url.substring(url.length()-3, url.length())
         try (BufferedInputStream in = new BufferedInputStream(new URL(url).openStream()); // InputStream in = new URL(url).openConnection().getInputStream(); Можно ли так!?
              FileOutputStream fileOutputStream = new FileOutputStream("pom_tmp.pdf")) {
-            byte dataBuffer[] = new byte[1024];
+            byte[] dataBuffer = new byte[1024];
             int bytesRead;
             long startDate = System.nanoTime();
             int count = 0;

@@ -35,15 +35,16 @@ public class User {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null || getClass() != obj.getClass())
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
+        }
         User user = (User) obj;
-        if (id != user.id && amount != user.amount)
+        if (id != user.id && amount != user.amount) {
             return false;
-/*      if(id==user.id && amount==user.amount)
-            return true;*/
+        }
         return true;
     }
 
