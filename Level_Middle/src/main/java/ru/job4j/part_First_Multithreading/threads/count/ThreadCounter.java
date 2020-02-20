@@ -2,30 +2,30 @@ package ru.job4j.part_First_Multithreading.threads.count;
 
 public class ThreadCounter {
 
-    public static class CounterThread extends Thread{
+    public static class CounterThread extends Thread {
 
         private final Count counter;
 
-        public CounterThread(final Count counter){
+        public CounterThread(final Count counter) {
             this.counter = counter;
         }
 
         public void run() {
-            while (counter.get()<2000){
-            for(int i=0;i<10;i++) {
-                counter.increment();
+            while (counter.get() < 2000) {
+                for (int i = 0; i < 10; i++) {
+                    counter.increment();
 //            System.out.println(counter.get());
-              }
-              try {
-                  Thread.sleep(1);
-              } catch (InterruptedException ex) {
-                  Thread.currentThread().interrupt();
-              }
+                }
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                }
             }
         }
     }
 
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException {
 
         Count counter = new Count();
         Thread threadA = new CounterThread(counter);

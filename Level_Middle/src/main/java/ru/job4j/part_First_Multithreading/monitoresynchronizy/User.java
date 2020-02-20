@@ -4,29 +4,29 @@ public class User {
     private int id;
     private int amount;
 
-    public User(int id, int amount){
-        this.id=id;
-        this.amount=amount;
+    public User(int id, int amount) {
+        this.id = id;
+        this.amount = amount;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id){
-        this.id=id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getAmount(){
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount){
-        this.amount=amount;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     @Override
-    public int hashCode(){
+    public int hashCode() {
         final int prime = 25;
         int result = id;
         result = prime * result + amount;
@@ -34,13 +34,13 @@ public class User {
     }
 
     @Override
-    public boolean equals(Object obj){
-        if(this == obj)
+    public boolean equals(Object obj) {
+        if (this == obj)
             return true;
-        if (obj == null||getClass()!=obj.getClass())
+        if (obj == null || getClass() != obj.getClass())
             return false;
         User user = (User) obj;
-        if(id!=user.id && amount!=user.amount)
+        if (id != user.id && amount != user.amount)
             return false;
 /*      if(id==user.id && amount==user.amount)
             return true;*/

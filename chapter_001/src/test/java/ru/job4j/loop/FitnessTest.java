@@ -7,23 +7,23 @@ import static org.junit.Assert.*;
 
 public class FitnessTest {
     @Test
-    public void whenIvanGreatNik(){
+    public void whenIvanGreatNik() {
         Fitness ft = new Fitness();
-        int month = ft.calc(95,90);
+        int month = ft.calc(95, 90);
         assertThat(month, is(0));
     }
 
     @Test
-    public void whenIvanLessOneNik(){
+    public void whenIvanLessOneNik() {
         Fitness ft = new Fitness();
         int month = ft.calc(90, 95);
         assertThat(month, is(1));
     }
 
     @Test
-    public void whenIvanLessByFewNik(){
+    public void whenIvanLessByFewNik() {
         Fitness ft = new Fitness();
-        int month = ft.calc(50,90);
+        int month = ft.calc(50, 90);
         assertThat(month, is(2));
     }
 

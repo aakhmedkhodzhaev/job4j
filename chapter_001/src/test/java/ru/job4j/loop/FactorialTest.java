@@ -9,16 +9,16 @@ public class FactorialTest {
     @Test
     public void whenCalculateFactorialForFiveThenOneHundreedTwenty() {
         Factorial factorial = new Factorial();
-        int n=5;
-        int result=factorial.calc(n);
-        assertThat(result,is(120));
+        int n = 5;
+        int result = factorial.calc(n);
+        assertThat(result, is(120));
     }
 
     @Test
     public void whenCalculateFactorialForZeroThenOne() {
         Factorial factorial = new Factorial();
-        int n=1;
-        int result=factorial.calc(n);
-        assertThat(result,is(1));
+        int n = 1;
+        int result = factorial.calc(n);
+        assertThat(result, is(1));
     }
 }

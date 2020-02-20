@@ -9,13 +9,13 @@ package ru.job4j.array;
  */
 
 public class Matrix {
-    public int[][]multiple(int size) {
+    public int[][] multiple(int size) {
         int[][] table = new int[size][size];
-        for(int i=0; i<size; i++){
-            int k=i+1;
-            for(int j=0; j<size; j++){
-                int z=j+1;
-                table[i][j]=k*z;
+        for (int i = 0; i < size; i++) {
+            int k = i + 1;
+            for (int j = 0; j < size; j++) {
+                int z = j + 1;
+                table[i][j] = k * z;
             }
 
         }

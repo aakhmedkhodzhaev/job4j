@@ -18,16 +18,14 @@ public class RectangleMove implements Runnable {
         while (!Thread.currentThread().isInterrupted()) {
             // выбор направления перемещения
             this.rect.setX(this.rect.getX() + this.i);
-            if(this.rect.getX()>300||this.rect.getX()<0)
-            {
-                this.i=-this.i;
+            if (this.rect.getX() > 300 || this.rect.getX() < 0) {
+                this.i = -this.i;
             }
 
             // выбор направления перемещения
             this.rect.setY(this.rect.getY() + this.y);
-            if(this.rect.getY()>300||this.rect.getY()<0)
-            {
-                this.y=-this.y;
+            if (this.rect.getY() > 300 || this.rect.getY() < 0) {
+                this.y = -this.y;
             }
 
             try {

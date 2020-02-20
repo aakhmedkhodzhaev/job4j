@@ -9,15 +9,15 @@ package ru.job4j.loop;
  */
 
 public class Mortgage {
-    public int year(int amount, int salary, double perecent){
-        int year =0;
-        double rz=(1 + perecent/100)*amount - salary;
-        while(rz>0){
-            rz = rz*(1 + perecent/100) - salary;
+    public int year(int amount, int salary, double perecent) {
+        int year = 0;
+        double rz = (1 + perecent / 100) * amount - salary;
+        while (rz > 0) {
+            rz = rz * (1 + perecent / 100) - salary;
             year++;
         }
-        if(rz<0){
-            year=1+year;
+        if (rz < 0) {
+            year = 1 + year;
         }
         return year;
     }

@@ -1,10 +1,10 @@
 package ru.job4j.array;
 
 /**
+ * @author Akhmedkhodzhaev A.A.
+ * @version 1.0 28.01.2020
  * @task 6.2. Перевернуть массив.[#207050]
  * @aim Сортировка массива по возрастанию
- * @version 1.0 28.01.2020
- * @author Akhmedkhodzhaev A.A.
  * @others Массивы и алгоритмы
  */
 
@@ -15,11 +15,11 @@ public class AlgoArray {
         array[0] = array[3]; // записываем в ячейку с индексом 0 значение ячейки с индексом 3.
         array[3] = temp; // записываем в ячейку с индексом 3 значение временной переменной.
         temp = array[1];
-        array[1]=array[2];
-        array[2]=temp;
-        temp=array[3];
-        array[3]=array[4];
-        array[4]=temp;
+        array[1] = array[2];
+        array[2] = temp;
+        temp = array[3];
+        array[3] = array[4];
+        array[4] = temp;
         for (int index = 0; index < array.length; index++) {
             System.out.println(array[index]);
         }
