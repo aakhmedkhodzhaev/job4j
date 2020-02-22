@@ -14,10 +14,6 @@ public class Defragment {
             if (array[index] == null) {
                 int point = index;
                 while (point < array.length) {
-                    if (array[point] == null) {
-                        point++;
-                        continue;
-                    }
                     if (array[point] != null) {
                         String temp = array[index];
                         array[index] = array[point];
