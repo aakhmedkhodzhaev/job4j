@@ -10,8 +10,8 @@ package ru.job4j.condition;
 
 public class MultiMax {
     public int max(int first, int second, int third) {
-        int a = (first >= second)? first : second;    //(((first >= second) ? first : second) >= third) ? ((first >= second) ? first : second) : third;
-        int result = (a >= third)? a : third;
+        int a = (first >= second) ? first : second;    //(((first >= second) ? first : second) >= third) ? ((first >= second) ? first : second) : third;
+        int result = (a >= third) ? a : third;
         return result;
     }
 }
