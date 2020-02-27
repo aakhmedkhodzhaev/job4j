@@ -36,4 +36,5 @@ public class MergeArrayTest {
         int[] result = mergeArray.merge(a, b);
         Assert.assertThat(result, Is.is(expect));
     }
+
 }
