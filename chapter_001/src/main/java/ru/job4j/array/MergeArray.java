@@ -1,7 +1,5 @@
 package ru.job4j.array;
 
-import com.sun.scenario.effect.Merge;
-
 /**
  * @author Akhmedkhodzhaev A.A.
  * @version 1.0 28.01.2020
@@ -26,7 +24,6 @@ public class MergeArray {
             }
 
         }
-
         return result;
     }
 
