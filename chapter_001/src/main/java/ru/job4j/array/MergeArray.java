@@ -12,15 +12,23 @@ public class MergeArray {
 
     public int[] merge(int[] a, int[] b) {
         int[] result = new int[a.length + b.length];
-        int aIndex = 0;
-        int bIndex = 0;
+        int aIndex = 0, bIndex = 0;
         for (int i = 0; i < result.length; i++) {
-            if (aIndex < a.length) {
-                result[i] = a[aIndex];
-                aIndex++;
-            } else if (bIndex < b.length) {
+            if (a.length == aIndex) {
                 result[i] = b[bIndex];
                 bIndex++;
+            } else if (b.length == bIndex) {
+                result[i] = a[aIndex];
+                aIndex++;
+            } else if (a[aIndex] > b[bIndex]) {
+                result[i] = b[bIndex];
+                bIndex++;
+            } else if (a[aIndex] < b[bIndex]) {
+                result[i] = a[aIndex];
+                aIndex++;
+            } else {
+                result[i] = a[aIndex];
+                result[i] = b[bIndex];
             }
 
         }
