@@ -10,7 +10,6 @@
     <version>3.0</version>
     <modules>
         <module>chapter_001</module>
-        <module>Level_Middle</module>
     </modules>
 
     <properties>
