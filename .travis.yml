@@ -1,5 +1,7 @@
 # используем язык Java.
 language: java
+install: mvn install
+mvn test -B
 jdk:
   - openjdk8
 
@@ -14,6 +16,7 @@ after_success:
 env:
 global:
   - CODECOV_TOKEN="b7d07776-4bf9-4dbb-b63c-02f445d96c04"
+
 
 # Отправлять уведомление на почту teenager_08@inbox.ru если сборка упала
 notifications:
