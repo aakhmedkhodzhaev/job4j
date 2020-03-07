@@ -1,7 +1,6 @@
 # используем язык Java.
 language: java
-install: mvn install
-mvn test -B
+
 jdk:
   - openjdk8
 
